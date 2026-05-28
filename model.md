@@ -99,13 +99,34 @@ huggingface-cli download Qwen/Qwen2.5-Math-7B          --local-dir models/Qwen2.
 huggingface-cli download Qwen/Qwen2.5-Math-7B-Instruct --local-dir models/Qwen2.5-Math-7B-Instruct
 huggingface-cli download Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B --local-dir models/Skywork-PRM-1.5B
 
-# Step 2: copy self-trained checkpoints from backup storage
-# Minimum required:
-#   models/DistillPRM-1.5B/adaptive_t3/best_model.pt   (8.7 G)
-#   models/DistillPRM-7B/adaptive_t3/best_model.pt     (14 G)
-#   outputs/distillprm-7b-instruct-adaptive-t3/adaptive_t3/best_model.pt  (14 G)
-#   outputs/distillprm-7b-iter2/best_model.pt           (14 G)
-#   outputs/distillprm-7b-iter2-combined/best_model.pt  (14 G)
+# Step 2: restore self-trained checkpoints from HuggingFace backup
+# Backup repo: https://huggingface.co/shensignal/DistillPRM-checkpoints (private)
+# Login first: huggingface-cli login
+
+mkdir -p models/DistillPRM-1.5B/adaptive_t3
+huggingface-cli download shensignal/DistillPRM-checkpoints \
+    DistillPRM-1.5B/adaptive_t3/best_model.pt \
+    --local-dir models/DistillPRM-1.5B/adaptive_t3 --repo-type model
+
+mkdir -p models/DistillPRM-7B/adaptive_t3
+huggingface-cli download shensignal/DistillPRM-checkpoints \
+    DistillPRM-7B/adaptive_t3/best_model.pt \
+    --local-dir models/DistillPRM-7B/adaptive_t3 --repo-type model
+
+mkdir -p outputs/distillprm-7b-instruct-adaptive-t3/adaptive_t3
+huggingface-cli download shensignal/DistillPRM-checkpoints \
+    DistillPRM-7B-Instruct/adaptive_t3/best_model.pt \
+    --local-dir outputs/distillprm-7b-instruct-adaptive-t3/adaptive_t3 --repo-type model
+
+mkdir -p outputs/distillprm-7b-iter2
+huggingface-cli download shensignal/DistillPRM-checkpoints \
+    DistillPRM-7B-iter2/best_model.pt \
+    --local-dir outputs/distillprm-7b-iter2 --repo-type model
+
+mkdir -p outputs/distillprm-7b-iter2-combined
+huggingface-cli download shensignal/DistillPRM-checkpoints \
+    DistillPRM-7B-iter2-combined/best_model.pt \
+    --local-dir outputs/distillprm-7b-iter2-combined --repo-type model
 ```
 
 ---

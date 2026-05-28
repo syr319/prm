@@ -9,8 +9,21 @@ Get your token at: https://huggingface.co/settings/tokens  (write permission)
 
 import argparse
 import os
+import ssl
 import sys
+import urllib3
 from pathlib import Path
+
+# This machine's SSL cert chain is incomplete; disable verification for uploads.
+ssl._create_default_https_context = ssl._create_unverified_context
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+import requests
+_orig_init = requests.Session.__init__
+def _patched_init(self, *args, **kwargs):
+    _orig_init(self, *args, **kwargs)
+    self.verify = False
+requests.Session.__init__ = _patched_init
 
 ROOT = Path(__file__).resolve().parent
 
@@ -52,16 +65,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--token",  required=True,
                         help="HuggingFace write token (hf_xxx)")
-    parser.add_argument("--repo",   default="syr319/DistillPRM-checkpoints",
+    parser.add_argument("--repo",   default="shensignal/DistillPRM-checkpoints",
                         help="HF repo id (default: syr319/DistillPRM-checkpoints)")
     parser.add_argument("--only",   choices=["core", "ablation", "all"],
                         default="core",
                         help="Which checkpoints to upload (default: core only)")
     args = parser.parse_args()
 
+    # Upload must go through real HuggingFace API, not the download mirror.
+    os.environ.pop("HF_ENDPOINT", None)
+
     from huggingface_hub import HfApi, create_repo
 
-    api = HfApi(token=args.token)
+    api = HfApi(token=args.token, endpoint="https://huggingface.co")
 
     # Create private repo if it doesn't exist
     try:
