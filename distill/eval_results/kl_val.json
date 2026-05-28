@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.9107953883777804,
+  "auc_roc": 0.9637606585342386,
+  "ece": 0.0321342712854987,
+  "wrong_step_precision": 0.8798683488706536,
+  "wrong_step_recall": 0.7456996745665008,
+  "wrong_step_f1": 0.8072471012202354,
+  "error_macro_f1": 0.29755031525424364,
+  "localization_acc": 0.9021572720946416,
+  "error_localization_acc": 0.7391991570073762,
+  "n_conversations": 7185,
+  "n_with_error": 1898,
+  "easy_n": 8197,
+  "easy_acc": 0.9176527998048066,
+  "medium_n": 271,
+  "medium_acc": 0.7453874538745388,
+  "hard_n": 119,
+  "hard_acc": 0.8151260504201681,
+  "mean_score_correct": 0.9271263528060726,
+  "mean_score_wrong": 0.33477048226643
+}

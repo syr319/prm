@@ -1,0 +1,37 @@
+{
+  "gsm8k": {
+    "f1": 0.7631888779575182,
+    "acc_error": 0.6763285024154589,
+    "acc_correct": 0.8756476683937824,
+    "threshold": 0.5221608040201006,
+    "n_total": 400,
+    "n_error_problems": 207
+  },
+  "math": {
+    "f1": 0.6638557343020239,
+    "acc_error": 0.601010101010101,
+    "acc_correct": 0.7413793103448276,
+    "threshold": 0.5221608040201006,
+    "n_total": 1000,
+    "n_error_problems": 594
+  },
+  "olympiadbench": {
+    "f1": 0.5190106514336497,
+    "acc_error": 0.481089258698941,
+    "acc_correct": 0.5634218289085545,
+    "threshold": 0.5221608040201006,
+    "n_total": 1000,
+    "n_error_problems": 661
+  },
+  "omnimath": {
+    "f1": 0.5296464031544038,
+    "acc_error": 0.4756258234519104,
+    "acc_correct": 0.5975103734439834,
+    "threshold": 0.5221608040201006,
+    "n_total": 1000,
+    "n_error_problems": 759
+  },
+  "average": {
+    "f1": 0.6189254167118989
+  }
+}

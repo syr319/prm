@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-05-12T19:34:43",
+  "n_problems": 500,
+  "n_candidates": 32,
+  "N_values": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "results": {
+    "random": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.712,
+        "8": 0.71,
+        "16": 0.71,
+        "32": 0.706
+      },
+      "avg_time_ms": 0.369
+    },
+    "majority": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.786,
+        "8": 0.794,
+        "16": 0.81,
+        "32": 0.808
+      },
+      "avg_time_ms": 0.116
+    },
+    "DistillPRM-1.5B": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.714,
+        "8": 0.684,
+        "16": 0.662,
+        "32": 0.634
+      },
+      "avg_time_ms": 6659.0,
+      "timing_per_n_ms": {
+        "1": 208.1,
+        "4": 832.4,
+        "8": 1664.7,
+        "16": 3329.5,
+        "32": 6659.0
+      },
+      "checkpoint": "/mnt/user/shenyiran3/PRM/models/DistillPRM-1.5B/adaptive_t3/best_model.pt"
+    },
+    "DistillPRM-7B": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.77,
+        "8": 0.764,
+        "16": 0.772,
+        "32": 0.782
+      },
+      "avg_time_ms": 25612.0,
+      "timing_per_n_ms": {
+        "1": 800.4,
+        "4": 3201.5,
+        "8": 6403.0,
+        "16": 12806.0,
+        "32": 25612.0
+      },
+      "checkpoint": "/mnt/user/shenyiran3/PRM/models/DistillPRM-7B/adaptive_t3/best_model.pt"
+    },
+    "DistillPRM-1.5B-last": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.662,
+        "8": 0.62,
+        "16": 0.594,
+        "32": 0.544
+      },
+      "agg": "last",
+      "avg_time_ms": 12066.2,
+      "timing_per_n_ms": {
+        "1": 377.1,
+        "4": 1508.3,
+        "8": 3016.5,
+        "16": 6033.1,
+        "32": 12066.2
+      },
+      "checkpoint": "/mnt/user/shenyiran3/PRM/models/DistillPRM-1.5B/adaptive_t3/best_model.pt"
+    },
+    "Skywork-PRM-1.5B": {
+      "accuracy": {
+        "1": 0.714,
+        "4": 0.714,
+        "8": 0.714,
+        "16": 0.714,
+        "32": 0.714
+      },
+      "model_type": "skywork",
+      "agg": "avg",
+      "avg_time_ms": 1014.3,
+      "timing_per_n_ms": {
+        "1": 31.7,
+        "4": 126.8,
+        "8": 253.6,
+        "16": 507.1,
+        "32": 1014.3
+      },
+      "checkpoint": "/mnt/user/shenyiran3/PRM/models/Skywork-PRM-1.5B"
+    }
+  }
+}

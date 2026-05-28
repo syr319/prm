@@ -1,0 +1,98 @@
+{
+  "generated": "2026-05-01T14:05:33.899450",
+  "args": {
+    "num_problems": 50,
+    "warmup": 10,
+    "seed": 42,
+    "batch_sizes": [
+      1,
+      16
+    ],
+    "batch_size_a": 16,
+    "max_length": 1024,
+    "max_tokens_s1": 512,
+    "max_tokens_s2": 1024,
+    "skip_plan_b": true,
+    "skip_plan_a": true,
+    "skip": [
+      "distillprm_1.5b",
+      "distillprm_7b",
+      "genprm_1.5b",
+      "genprm_7b"
+    ],
+    "results_seed": "distill/reports/speed_benchmark_v2_merged.json"
+  },
+  "n_steps": 391,
+  "results": {
+    "distillprm_1.5b": {
+      "1": {
+        "n_steps": 391,
+        "batch_size": 1,
+        "total_sec": 11.9,
+        "ms_per_step": 30.5,
+        "steps_per_sec": 32.8,
+        "avg_tokens": null
+      },
+      "16": {
+        "n_steps": 391,
+        "batch_size": 16,
+        "total_sec": 5.6,
+        "ms_per_step": 14.2,
+        "steps_per_sec": 70.4,
+        "avg_tokens": null
+      }
+    },
+    "distillprm_7b": {
+      "1": {
+        "n_steps": 391,
+        "batch_size": 1,
+        "total_sec": 26.7,
+        "ms_per_step": 68.4,
+        "steps_per_sec": 14.6,
+        "avg_tokens": null
+      },
+      "16": {
+        "n_steps": 391,
+        "batch_size": 16,
+        "total_sec": 21.8,
+        "ms_per_step": 55.6,
+        "steps_per_sec": 18.0,
+        "avg_tokens": null
+      }
+    },
+    "plan_a_genprm_1.5b": {
+      "n_steps": 391,
+      "batch_size": 16,
+      "framework": "transformers",
+      "total_sec": 1155.5,
+      "ms_per_step": 2955.2,
+      "steps_per_sec": 0.34,
+      "avg_tokens": 819.0
+    },
+    "plan_a_genprm_7b": {
+      "n_steps": 391,
+      "batch_size": 16,
+      "framework": "transformers",
+      "total_sec": 1245.7,
+      "ms_per_step": 3186.0,
+      "steps_per_sec": 0.31,
+      "avg_tokens": 918.0
+    },
+    "plan_b_genprm_1.5b": {
+      "n_steps": 391,
+      "framework": "vllm",
+      "total_sec": 45.654,
+      "ms_per_step": 116.76,
+      "steps_per_sec": 8.56,
+      "avg_tokens": 717.7
+    },
+    "plan_b_genprm_7b": {
+      "n_steps": 391,
+      "framework": "vllm",
+      "total_sec": 62.965,
+      "ms_per_step": 161.04,
+      "steps_per_sec": 6.21,
+      "avg_tokens": 770.7
+    }
+  }
+}

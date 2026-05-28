@@ -1,0 +1,54 @@
+# OpenPRM SFT Training Config — ms-swift 4.1.1
+# Model: Qwen2.5-VL-7B-Instruct + LoRA (rank=64)
+# Task: step-level process reward (correct / incorrect classification)
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+model: /mnt/user/shenyiran3/PRM/models/Qwen2.5-VL-7B-Instruct
+
+# ── Tuner ─────────────────────────────────────────────────────────────────────
+tuner_type: lora
+target_modules:
+  - all-linear          # apply LoRA to all linear layers in LLM
+lora_rank: 64
+lora_alpha: 128
+lora_dropout: 0.05
+use_rslora: false
+
+# freeze vision encoder (too large to train, and not needed for step classification)
+# unfreeze the aligner (projector) so it can adapt visual features to PRM task
+freeze_vit: true
+freeze_aligner: false
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+dataset:
+  - /mnt/user/shenyiran3/PRM/data/train_data.jsonl
+val_dataset:
+  - /mnt/user/shenyiran3/PRM/data/val_data.jsonl
+
+max_length: 2048
+dataset_num_proc: 4
+
+# ── Training ──────────────────────────────────────────────────────────────────
+num_train_epochs: 2
+per_device_train_batch_size: 16
+gradient_accumulation_steps: 2   # effective batch = 32
+learning_rate: 2e-4
+weight_decay: 0.01
+warmup_ratio: 0.03
+lr_scheduler_type: cosine
+
+bf16: true
+gradient_checkpointing: true
+
+# ── Logging / Saving / Eval ───────────────────────────────────────────────────
+output_dir: /mnt/user/shenyiran3/PRM/output/openprm-7b-lora
+logging_steps: 10
+save_steps: 100
+eval_steps: 50
+eval_strategy: steps
+save_total_limit: 3
+load_best_model_at_end: false     # classification task; best model by loss
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+dataloader_num_workers: 4
+seed: 42

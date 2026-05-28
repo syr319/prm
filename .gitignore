@@ -1,0 +1,40 @@
+# ── Model weights (hundreds of GB) ───────────────────────────────────────────
+models/
+outputs/
+
+# ── Large data files ──────────────────────────────────────────────────────────
+data/genprm_math_steps*.json
+data/hard_steps_from_7b*.json
+data/hard_steps_from_instruct.json
+data/math500_candidates.json
+data/train_data.jsonl
+data/all_scores*.json
+data/llava-instruct/
+data/llava-bench/
+data/mm-vet/
+data/PRM800k/
+data/pipeline/
+
+# ── Large eval prediction dumps (keep small result JSONs) ────────────────────
+distill/eval_results/*_preds.json
+distill/eval_results/*_error_analysis.json
+distill/eval_results/*.log
+distill/step3_full_run.log
+distill/step5_ce_train.log
+distill/train_instruct.log
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# ── Claude internal ───────────────────────────────────────────────────────────
+.claude/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+.DS_Store
+*.swp

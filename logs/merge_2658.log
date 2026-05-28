@@ -1,0 +1,38 @@
+run sh: `/usr/bin/python3 /usr/local/lib/python3.12/dist-packages/swift/cli/export.py --model /mnt/user/shenyiran3/PRM/models/Qwen2.5-VL-7B-Instruct --adapters output/openprm-7b-lora/v0-20260414-222611/checkpoint-2658 --merge_lora true --output_dir output/openprm-7b-merged-2658`
+[INFO:swift] Successfully registered `/usr/local/lib/python3.12/dist-packages/swift/dataset/data/dataset_info.json`.
+[INFO:swift] Successfully loaded /mnt/user/shenyiran3/PRM/output/openprm-7b-lora/v0-20260414-222611/checkpoint-2658/args.json.
+[INFO:swift] rank: -1, local_rank: -1, world_size: 1, local_world_size: 1
+`torch_dtype` is deprecated! Use `dtype` instead!
+[WARNING:swift] Please install the package: `pip install "decord" -U`.
+[INFO:swift] Setting args.lazy_tokenize: True
+[INFO:swift] args.output_dir: `/mnt/user/shenyiran3/PRM/output/openprm-7b-merged-2658`
+[INFO:swift] args: ExportArguments(use_ray=False, ray_exp_name=None, device_groups=None, model='/mnt/user/shenyiran3/PRM/models/Qwen2.5-VL-7B-Instruct', model_type='qwen2_5_vl', model_revision=None, task_type='causal_lm', torch_dtype=torch.bfloat16, attn_impl=None, experts_impl=None, new_special_tokens=[], num_labels=None, problem_type=None, rope_scaling=None, device_map=None, max_memory={}, max_model_len=None, local_repo_path=None, init_strategy=None, template='qwen2_5_vl', system=None, max_length=128000, truncation_strategy='delete', max_pixels=None, agent_template=None, norm_bbox=None, use_chat_template=True, padding_side='right', padding_free=False, loss_scale='default', sequence_parallel_size=1, template_backend='swift', response_prefix=None, enable_thinking=None, add_non_thinking_prefix=True, dataset=[], val_dataset=[], cached_dataset=[], cached_val_dataset=[], split_dataset_ratio=0.0, data_seed=42, dataset_num_proc=1, load_from_cache_file=False, dataset_shuffle=True, val_dataset_shuffle=False, streaming=False, interleave_prob=None, stopping_strategy='first_exhausted', shuffle_buffer_size=1000, download_mode='reuse_dataset_if_exists', columns={}, strict=False, remove_unused_columns=True, model_name=None, model_author=None, custom_dataset_info=[], quant_method=None, quant_bits=None, hqq_axis=None, bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_quant_type='nf4', bnb_4bit_use_double_quant=True, bnb_4bit_quant_storage=None, max_new_tokens=None, temperature=None, top_k=None, top_p=None, repetition_penalty=None, num_beams=1, stream=False, stop_words=[], logprobs=False, top_logprobs=None, structured_outputs_regex=None, tuner_backend='peft', tuner_type='lora', adapters=['/mnt/user/shenyiran3/PRM/output/openprm-7b-lora/v0-20260414-222611/checkpoint-2658'], external_plugins=[], custom_register_path=[], seed=42, model_kwargs={}, load_args=True, load_data_args=False, packing=False, packing_length=None, packing_num_proc=1, lazy_tokenize=True, use_hf=False, hub_token=None, ddp_timeout=18000000, ddp_backend=None, ignore_args_error=False, use_swift_lora=False, merge_lora=True, safe_serialization=True, max_shard_size='5GB', output_dir='/mnt/user/shenyiran3/PRM/output/openprm-7b-merged-2658', quant_n_samples=256, quant_batch_size=1, group_size=128, to_cached_dataset=False, template_mode='train', to_ollama=False, to_mcore=False, to_hf=False, mcore_model=None, mcore_adapter=None, thread_count=None, test_convert_precision=False, test_convert_dtype=torch.float32, push_to_hub=False, hub_model_id=None, hub_private_repo=False, commit_message='update files', to_peft_format=False, exist_ok=False)
+[INFO:swift] Global seed set to 42
+[INFO:swift] Start time of running main: 2026-04-15 15:53:07.893455
+[INFO:swift] swift.__version__: 4.1.1
+[INFO:swift] merge_device_map: None
+[WARNING:swift] Please install the package: `pip install "decord" -U`.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+[INFO:swift] Setting max_ratio: 200. You can adjust this hyperparameter through the environment variable: `MAX_RATIO`.
+[INFO:swift] Setting frame_factor: 2. You can adjust this hyperparameter through the environment variable: `FRAME_FACTOR`.
+[INFO:swift] Setting fps: 2.0. You can adjust this hyperparameter through the environment variable: `FPS`.
+[INFO:swift] Setting fps_min_frames: 4. You can adjust this hyperparameter through the environment variable: `FPS_MIN_FRAMES`.
+[INFO:swift] Setting fps_max_frames: 768. You can adjust this hyperparameter through the environment variable: `FPS_MAX_FRAMES`.
+[INFO:swift] Setting image_max_token_num: 16384. You can adjust this hyperparameter through the environment variable: `IMAGE_MAX_TOKEN_NUM`.
+[INFO:swift] Setting image_min_token_num: 4. You can adjust this hyperparameter through the environment variable: `IMAGE_MIN_TOKEN_NUM`.
+[INFO:swift] Setting spatial_merge_size: 2. You can adjust this hyperparameter through the environment variable: `SPATIAL_MERGE_SIZE`.
+[INFO:swift] Setting video_max_token_num: 768. You can adjust this hyperparameter through the environment variable: `VIDEO_MAX_TOKEN_NUM`.
+[INFO:swift] Setting video_min_token_num: 128. You can adjust this hyperparameter through the environment variable: `VIDEO_MIN_TOKEN_NUM`.
+[INFO:swift] model_kwargs: {'device_map': 'cuda:0', 'dtype': torch.bfloat16}
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:03,  1.29it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.35it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:02<00:01,  1.38it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:02<00:00,  1.40it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:03<00:00,  1.80it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:03<00:00,  1.58it/s]
+[INFO:swift] default_system: 'You are a helpful assistant.'
+[INFO:swift] max_length: 128000
+[INFO:swift] response_prefix: ''
+[INFO:swift] agent_template: hermes
+[INFO:swift] norm_bbox: none
+[INFO:swift] Setting ROOT_IMAGE_DIR: None. You can adjust this hyperparameter through the environment variable: `ROOT_IMAGE_DIR`.
+[INFO:swift] Setting QWENVL_BBOX_FORMAT: legacy. You can adjust this hyperparameter through the environment variable: `QWENVL_BBOX_FORMAT`.
+[INFO:swift] Merge LoRA...
+[INFO:swift] Saving merged weights...
+[INFO:swift] Successfully merged LoRA and saved in /mnt/user/shenyiran3/PRM/output/openprm-7b-merged-2658.
+[INFO:swift] End time of running main: 2026-04-15 15:53:54.627666

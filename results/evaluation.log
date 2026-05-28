@@ -1,0 +1,75 @@
+
+--- Evaluating: pass_at_1 ---
+  [20/218] pass_at_1: running avg=0.7400
+  [40/218] pass_at_1: running avg=0.6450
+  [60/218] pass_at_1: running avg=0.6767
+  [80/218] pass_at_1: running avg=0.7294
+  [100/218] pass_at_1: running avg=0.7235
+  [120/218] pass_at_1: running avg=0.7362
+  [140/218] pass_at_1: running avg=0.7418
+  [160/218] pass_at_1: running avg=0.7463
+  [180/218] pass_at_1: running avg=0.7203
+  [200/218] pass_at_1: running avg=0.6960
+  [218/218] pass_at_1: running avg=0.7002
+
+--- Evaluating: llava_critic_bon ---
+  [20/218] llava_critic_bon: running avg=0.7700
+  [40/218] llava_critic_bon: running avg=0.6850
+  [60/218] llava_critic_bon: running avg=0.7342
+  [80/218] llava_critic_bon: running avg=0.7662
+  [100/218] llava_critic_bon: running avg=0.7520
+  [120/218] llava_critic_bon: running avg=0.7642
+  [140/218] llava_critic_bon: running avg=0.7657
+  [160/218] llava_critic_bon: running avg=0.7669
+  [180/218] llava_critic_bon: running avg=0.7417
+  [200/218] llava_critic_bon: running avg=0.7178
+  [218/218] llava_critic_bon: running avg=0.7222
+
+--- Evaluating: visualprm_bon ---
+  [20/218] visualprm_bon: running avg=0.7500
+  [40/218] visualprm_bon: running avg=0.6250
+  [60/218] visualprm_bon: running avg=0.7133
+  [80/218] visualprm_bon: running avg=0.7506
+  [100/218] visualprm_bon: running avg=0.7425
+  [120/218] visualprm_bon: running avg=0.7562
+  [140/218] visualprm_bon: running avg=0.7625
+  [160/218] visualprm_bon: running avg=0.7653
+  [180/218] visualprm_bon: running avg=0.7347
+  [200/218] visualprm_bon: running avg=0.7105
+  [218/218] visualprm_bon: running avg=0.7163
+
+=======================================================
+  MM-Vet Evaluation Results
+=======================================================
+Setting                      MM-Vet Score
+-------------------------------------------------------
+  Qwen2.5-VL-7B Pass@1             70.0
+  + LLaVA-Critic BoN@8             72.2
+  + VisualPRM BoN@8                71.6
+=======================================================
+
+  Capability breakdown — Qwen2.5-VL-7B Pass@1
+    gen                  62.2
+    know                 58.4
+    math                 67.5
+    ocr                  77.7
+    rec                  65.8
+    spat                 71.1
+
+  Capability breakdown — + LLaVA-Critic BoN@8
+    gen                  64.1
+    know                 60.7
+    math                 76.9
+    ocr                  79.6
+    rec                  67.8
+    spat                 74.9
+
+  Capability breakdown — + VisualPRM BoN@8
+    gen                  63.0
+    know                 59.2
+    math                 76.0
+    ocr                  80.2
+    rec                  66.8
+    spat                 75.7
+
+Summary saved to /mnt/user/shenyiran3/PRM/results/summary.json

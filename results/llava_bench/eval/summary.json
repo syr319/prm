@@ -1,0 +1,32 @@
+{
+  "scores": {
+    "pass_at_1": 0.6266666666666667,
+    "llava_critic_bon": null,
+    "visualprm_bon": 0.6649999999999999,
+    "openprm_bon_ckpt2100": 0.6549999999999999,
+    "openprm_bon_ckpt2658": 0.6316666666666666
+  },
+  "breakdown": {
+    "pass_at_1": {
+      "complex": 0.6749999999999999,
+      "conv": 0.6176470588235294,
+      "detail": 0.5466666666666666
+    },
+    "llava_critic_bon": {},
+    "visualprm_bon": {
+      "complex": 0.6714285714285715,
+      "conv": 0.7058823529411765,
+      "detail": 0.6066666666666667
+    },
+    "openprm_bon_ckpt2100": {
+      "complex": 0.6714285714285715,
+      "conv": 0.6764705882352942,
+      "detail": 0.6
+    },
+    "openprm_bon_ckpt2658": {
+      "complex": 0.6678571428571428,
+      "conv": 0.6176470588235294,
+      "detail": 0.58
+    }
+  }
+}

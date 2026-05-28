@@ -1,0 +1,34 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+/usr/local/lib/python3.12/dist-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+InternLM2ForCausalLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly defined. However, it doesn't directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you're using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you'll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+Loaded 218 questions from /mnt/user/shenyiran3/PRM/results/candidates.json
+Loading VisualPRM from /mnt/user/shenyiran3/PRM/models/VisualPRM-8B ...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:13<00:40, 13.36s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:24<00:23, 11.92s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:34<00:10, 10.96s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:36<00:00,  7.65s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:36<00:00,  9.16s/it]
+  [10/218] v1_9: scores=['0.923', '0.937', '0.941', '0.950', '0.944', '0.971', '0.949', '0.937'], best=5
+  [20/218] v1_19: scores=['0.867', '0.798', '0.818', '0.852', '0.867', '0.835', '0.867', '0.835'], best=0
+  [30/218] v1_29: scores=['0.047', '0.047', '0.011', '0.047', '0.047', '0.047', '0.047', '0.047'], best=0
+  [40/218] v1_39: scores=['0.905', '0.881', '0.852', '0.905', '0.852', '0.905', '0.905', '0.818'], best=0
+  [50/218] v1_49: scores=['0.861', '0.828', '0.797', '0.797', '0.901', '0.818', '0.865', '0.792'], best=4
+  [60/218] v1_59: scores=['0.932', '0.932', '0.932', '0.932', '0.932', '0.932', '0.924', '0.924'], best=0
+  [70/218] v1_69: scores=['0.349', '0.791', '0.494', '0.694', '0.619', '0.684', '0.576', '0.783'], best=1
+  [80/218] v1_79: scores=['0.777', '0.777', '0.777', '0.852', '0.777', '0.777', '0.777', '0.852'], best=3
+  [90/218] v1_89: scores=['0.777', '0.818', '0.818', '0.777', '0.818', '0.818', '0.777', '0.777'], best=1
+  [100/218] v1_99: scores=['0.978', '0.984', '0.981', '0.993', '0.978', '0.983', '0.969', '0.978'], best=3
+  [110/218] v1_109: scores=['0.469', '0.294', '0.119', '0.119', '0.562', '0.622', '0.622', '0.622'], best=5
+  [120/218] v1_119: scores=['0.924', '0.893', '0.924', '0.924', '0.915', '0.881', '0.893', '0.924'], best=0
+  [130/218] v1_129: scores=['0.777', '0.731', '0.852', '0.777', '0.731', '0.852', '0.731', '0.731'], best=2
+  [140/218] v1_139: scores=['0.777', '0.731', '0.731', '0.777', '0.731', '0.777', '0.755', '0.500'], best=0
+  [150/218] v1_149: scores=['0.944', '0.947', '0.976', '0.964', '0.952', '0.955', '0.946', '0.956'], best=2
+  [160/218] v1_159: scores=['0.884', '0.884', '0.954', '0.960', '0.815', '0.933', '0.966', '0.936'], best=6
+  [170/218] v1_169: scores=['0.747', '0.438', '0.773', '0.593', '0.805', '0.773', '0.593', '0.773'], best=4
+  [180/218] v1_179: scores=['0.593', '0.531', '0.438', '0.562', '0.706', '0.531', '0.593', '0.679'], best=4
+  [190/218] v1_189: scores=['0.756', '0.821', '0.662', '0.714', '0.877', '0.703', '0.865', '0.830'], best=4
+  [200/218] v1_199: scores=['0.766', '0.593', '0.784', '0.651', '0.890', '0.758', '0.807', '0.593'], best=4
+  [210/218] v1_209: scores=['0.923', '0.896', '0.929', '0.957', '0.515', '0.841', '0.961', '0.943'], best=6
+  [218/218] v1_217: scores=['0.950', '0.963', '0.971', '0.958', '0.959', '0.977', '0.954', '0.968'], best=5
+
+Done. 218 questions saved to /mnt/user/shenyiran3/PRM/results/visualprm_bon.json

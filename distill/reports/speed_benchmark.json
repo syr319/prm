@@ -1,0 +1,69 @@
+{
+  "generated": "2026-04-30T21:36:36.933788",
+  "args": {
+    "num_problems": 50,
+    "warmup": 10,
+    "seed": 42,
+    "batch_sizes": [
+      1,
+      16
+    ],
+    "max_length": 1024,
+    "max_tokens_analyze": 512,
+    "max_tokens_verify_output": 1024,
+    "skip": []
+  },
+  "n_steps": 391,
+  "results": {
+    "distillprm_1.5b": {
+      "1": {
+        "n_steps": 391,
+        "batch_size": 1,
+        "total_sec": 9.549,
+        "ms_per_step": 24.42,
+        "steps_per_sec": 40.95,
+        "avg_tokens": null
+      },
+      "16": {
+        "n_steps": 391,
+        "batch_size": 16,
+        "total_sec": 9.32,
+        "ms_per_step": 23.84,
+        "steps_per_sec": 41.95,
+        "avg_tokens": null
+      }
+    },
+    "distillprm_7b": {
+      "1": {
+        "n_steps": 391,
+        "batch_size": 1,
+        "total_sec": 25.217,
+        "ms_per_step": 64.49,
+        "steps_per_sec": 15.51,
+        "avg_tokens": null
+      },
+      "16": {
+        "n_steps": 391,
+        "batch_size": 16,
+        "total_sec": 37.261,
+        "ms_per_step": 95.3,
+        "steps_per_sec": 10.49,
+        "avg_tokens": null
+      }
+    },
+    "genprm_1.5b": {
+      "n_steps": 391,
+      "total_sec": 49.302,
+      "ms_per_step": 126.09,
+      "steps_per_sec": 7.93,
+      "avg_tokens": 738.1
+    },
+    "genprm_7b": {
+      "n_steps": 391,
+      "total_sec": 63.691,
+      "ms_per_step": 162.89,
+      "steps_per_sec": 6.14,
+      "avg_tokens": 771.0
+    }
+  }
+}
